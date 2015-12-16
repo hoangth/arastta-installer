@@ -1,0 +1,23 @@
+{
+  "name": "matt/arastta-installer",
+  "description": "Standalone Arastta installer",
+  "authors": [
+    {
+      "name": "Matt",
+      "email": "mattythebatty@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Arastta\\Installer\\Console\\": "src/"
+    }
+  },
+  "require": {
+    "symfony/console": "^3.0",
+    "guzzlehttp/guzzle": "^6.1",
+    "symfony/process": "^3.0"
+  },
+  "bin": [
+    "arastta"
+  ]
+}
