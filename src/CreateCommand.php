@@ -63,7 +63,7 @@ class CreateCommand extends Command {
 	 */
 	protected function verifyApplicationDoesntExist()
 	{
-		if (is_dir($this->getInstallationDirectory())) {
+		if (is_dir($this->getInstallationDirectory()) && $this->getInstallationDirectory() != getcwd()) {
 			throw new RuntimeException('Application already exists!');
 		}
 	}
