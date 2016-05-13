@@ -1,9 +1,11 @@
 {
   "name": "mattythebatty/arastta-installer",
   "description": "Standalone Arastta installer",
+  "license": "MIT",
+  "keywords": ["arastta", "ecommerce"],
   "authors": [
     {
-      "name": "Matt",
+      "name": "Matthew Tonkin - Dunn",
       "email": "mattythebatty@gmail.com"
     }
   ],
