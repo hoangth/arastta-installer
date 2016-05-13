@@ -43,16 +43,23 @@ class CreateCommand extends Command {
 			->extract($zipFile)
 			->cleanUp($zipFile);
 
-		$composer = $this->findComposer();
+		$commands = array();
 
-		$commands = [
-			$composer.' install'
-		];
+		if ($this->input->getOption('latest')) {
+			$composer = $this->findComposer();
 
-		$process = new Process(implode(' && ', $commands), $this->getInstallationDirectory(), null, null, null);
-		$process->run(function ($type, $line) use ($output) {
-			$output->write($line);
-		});
+			$commands = [
+				$composer.' install'
+			];
+		}
+
+		if ($commands) {
+			$process = new Process(implode(' && ', $commands), $this->getInstallationDirectory(), null, null, null);
+			$process->run(function ($type, $line) use ($output) {
+				$output->write($line);
+			});
+
+		}
 
 		$output->writeln('<comment>Arastta should be ready.</comment>');
 	}
